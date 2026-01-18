@@ -1,0 +1,9 @@
+{
+  "name": "travel-agent",
+  "description": "Reusable travel agents: Google Flights, ITA Matrix, Flighty, Tripsy",
+  "version": "1.0.0",
+  "author": {
+    "name": "Omar Shahine"
+  },
+  "license": "MIT"
+}
