@@ -7,6 +7,5 @@
   },
   "repository": "https://github.com/omarshahine/Agent-Plugins",
   "license": "MIT",
-  "keywords": ["travel", "flights", "google-flights", "ita-matrix", "flighty", "tripsy"],
-  "agents": "./agents/"
+  "keywords": ["travel", "flights", "google-flights", "ita-matrix", "flighty", "tripsy"]
 }
