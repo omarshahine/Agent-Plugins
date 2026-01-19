@@ -13,6 +13,12 @@ Options:
     --children N (default: 0)
     --trip one-way|round-trip (for search command, default: one-way)
     --return-date YYYY-MM-DD (for round-trip searches)
+    --fetch-mode common|fallback|local (default: fallback)
+
+Trip Types:
+    one-way: Single flight from A to B
+    round-trip: Outbound A→B and return B→A (specify --return-date)
+    multi-city: Multiple legs (use 'multi' command with --legs)
 """
 
 import argparse
@@ -54,7 +60,8 @@ def search_flights(
     children: int = 0,
     infants_in_seat: int = 0,
     infants_on_lap: int = 0,
-    trip_type: str = "one-way"
+    trip_type: str = "one-way",
+    fetch_mode: str = "fallback"
 ) -> dict:
     """Search for flights between two airports."""
 
@@ -82,7 +89,7 @@ def search_flights(
             trip=trip,
             seat=seat,
             passengers=passengers,
-            fetch_mode="fallback"
+            fetch_mode=fetch_mode
         )
 
         flights = [format_flight(f) for f in result.flights]
@@ -93,7 +100,7 @@ def search_flights(
                 "to": to_airport,
                 "date": date,
                 "return_date": return_date,
-                "trip_type": trip_type,
+                "trip_type": trip,
                 "seat_class": seat,
                 "passengers": {
                     "adults": adults,
@@ -108,7 +115,10 @@ def search_flights(
             "count": len(flights)
         }
     except Exception as e:
-        return {"error": str(e), "search": {
+        error_msg = str(e)
+        if "Connect" in error_msg or "tunnel" in error_msg:
+            error_msg = "Network connection failed. Check internet connectivity."
+        return {"error": error_msg, "search": {
             "from": from_airport,
             "to": to_airport,
             "date": date
@@ -121,7 +131,8 @@ def search_multi_city(
     adults: int = 1,
     children: int = 0,
     infants_in_seat: int = 0,
-    infants_on_lap: int = 0
+    infants_on_lap: int = 0,
+    fetch_mode: str = "fallback"
 ) -> dict:
     """Search for multi-city flights.
 
@@ -129,6 +140,7 @@ def search_multi_city(
         legs: List of (from_airport, to_airport, date) tuples
         seat: Cabin class
         adults, children, etc.: Passenger counts
+        fetch_mode: How to fetch data (common, fallback, local)
     """
 
     # Build flight data for each leg
@@ -145,22 +157,22 @@ def search_multi_city(
         infants_on_lap=infants_on_lap
     )
 
+    # Format legs for output (do this first for error reporting)
+    legs_info = [
+        {"from": from_apt, "to": to_apt, "date": date}
+        for from_apt, to_apt, date in legs
+    ]
+
     try:
         result = get_flights(
             flight_data=flight_data,
-            trip="one-way",  # Multi-city is treated as one-way with multiple legs
+            trip="multi-city",
             seat=seat,
             passengers=passengers,
-            fetch_mode="fallback"
+            fetch_mode=fetch_mode
         )
 
         flights = [format_flight(f) for f in result.flights]
-
-        # Format legs for output
-        legs_info = [
-            {"from": from_apt, "to": to_apt, "date": date}
-            for from_apt, to_apt, date in legs
-        ]
 
         return {
             "search": {
@@ -180,7 +192,10 @@ def search_multi_city(
             "count": len(flights)
         }
     except Exception as e:
-        return {"error": str(e), "search": {"type": "multi-city", "legs": legs}}
+        error_msg = str(e)
+        if "Connect" in error_msg or "tunnel" in error_msg:
+            error_msg = "Network connection failed. Check internet connectivity."
+        return {"error": error_msg, "search": {"type": "multi-city", "legs": legs_info}}
 
 
 def parse_legs(legs_str: str) -> list[tuple[str, str, str]]:
@@ -210,6 +225,8 @@ def main():
     search_parser.add_argument("--children", type=int, default=0)
     search_parser.add_argument("--infants-in-seat", type=int, default=0)
     search_parser.add_argument("--infants-on-lap", type=int, default=0)
+    search_parser.add_argument("--fetch-mode", choices=["common", "fallback", "local"], default="fallback",
+                               help="How to fetch data: common (direct), fallback (with retry), local (playwright)")
 
     # Multi-city command
     multi_parser = subparsers.add_parser("multi", help="Search multi-city flights")
@@ -219,6 +236,8 @@ def main():
     multi_parser.add_argument("--children", type=int, default=0)
     multi_parser.add_argument("--infants-in-seat", type=int, default=0)
     multi_parser.add_argument("--infants-on-lap", type=int, default=0)
+    multi_parser.add_argument("--fetch-mode", choices=["common", "fallback", "local"], default="fallback",
+                               help="How to fetch data: common (direct), fallback (with retry), local (playwright)")
 
     args = parser.parse_args()
 
@@ -238,7 +257,8 @@ def main():
             children=args.children,
             infants_in_seat=args.infants_in_seat,
             infants_on_lap=args.infants_on_lap,
-            trip_type=args.trip if args.trip else ("round-trip" if args.return_date else "one-way")
+            trip_type=args.trip if args.trip else ("round-trip" if args.return_date else "one-way"),
+            fetch_mode=args.fetch_mode
         )
     elif args.command == "multi":
         try:
@@ -253,7 +273,8 @@ def main():
             adults=args.adults,
             children=args.children,
             infants_in_seat=args.infants_in_seat,
-            infants_on_lap=args.infants_on_lap
+            infants_on_lap=args.infants_on_lap,
+            fetch_mode=args.fetch_mode
         )
 
     print(json.dumps(result, indent=2))

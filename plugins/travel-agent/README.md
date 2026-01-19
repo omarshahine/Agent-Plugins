@@ -6,7 +6,7 @@ Reusable travel agents for flight research and tracking.
 
 | Agent | Description | Model |
 |-------|-------------|-------|
-| `google-flights` | Search Google Flights for airfare pricing estimates | haiku |
+| `google-flights` | Search Google Flights for airfare pricing estimates | sonnet |
 | `ita-matrix` | Search ITA Matrix for detailed fare codes, rules, pricing | sonnet |
 | `flighty` | Query Flighty app database for flight tracking data | haiku |
 | `tripsy` | Query Tripsy app database for trip/hotel information | haiku |

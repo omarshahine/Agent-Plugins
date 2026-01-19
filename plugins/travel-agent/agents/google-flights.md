@@ -2,7 +2,7 @@
 name: google-flights
 description: Search Google Flights for airfare estimates using the fast-flights library. Use for pricing research when planning trips. Supports multi-city, round-trip, and one-way searches in any cabin class.
 tools: Bash
-model: haiku
+model: sonnet
 ---
 
 # Google Flights Search Agent
@@ -25,16 +25,25 @@ pip install fast-flights
 
 ## Search Types
 
-### One-Way Search
-Single flight segment from origin to destination.
+The `fast-flights` library supports three trip types:
 
-### Round-Trip Search
-Outbound and return flights between two cities.
+### One-Way (`--trip one-way`)
+Single flight segment from origin to destination. Use the `search` command.
 
-### Multi-City (Complex Itineraries)
-Multiple flight segments for complex routings:
-- Seattle → Hong Kong → Beijing → Seattle
-- New York → Paris → Rome → New York
+Example: SEA → HKG on June 15
+
+### Round-Trip (`--trip round-trip`)
+Outbound and return flights between the same two cities. Use the `search` command with `--return-date`.
+
+Example: SEA → HKG on June 15, returning HKG → SEA on June 22
+
+### Multi-City (`multi` command)
+Multiple flight segments for complex itineraries. Use the `multi` command with `--legs`.
+
+Examples:
+- Seattle → Hong Kong → Beijing → Seattle (3 legs)
+- New York → Paris → Rome → New York (3 legs)
+- SFO → Tokyo → Seoul → Hong Kong → LAX (4 legs)
 
 ## Script Location
 
@@ -95,6 +104,7 @@ python plugins/travel-agent/agents/scripts/search_flights.py multi \
 | `--infants-in-seat` | Infants with seats | Integer (default: 0) |
 | `--infants-on-lap` | Lap infants | Integer (default: 0) |
 | `--legs` | Multi-city legs | Format: `FROM,TO,DATE;FROM,TO,DATE;...` |
+| `--fetch-mode` | Data retrieval method | `common`, `fallback` (default), `local` |
 
 ## Output Format
 
