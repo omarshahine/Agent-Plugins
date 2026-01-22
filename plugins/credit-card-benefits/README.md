@@ -1,6 +1,6 @@
 # Credit Card Benefits Tracker Plugin
 
-Track and maximize your premium credit card benefits with anniversary-aware checklists and optional YNAB integration.
+Track and maximize your premium credit card benefits with anniversary-aware checklists, multiple data source support, and automatic transaction matching.
 
 ## Supported Cards
 
@@ -18,32 +18,83 @@ Track and maximize your premium credit card benefits with anniversary-aware chec
 /plugin install credit-card-benefits@omarshahine-agent-plugins
 ```
 
+## Quick Start
+
+```bash
+# 1. Configure your cards and data source
+/credit-card-benefits:configure
+
+# 2. Initial sync pulls 12 months of history to find anniversaries
+/credit-card-benefits:sync --full
+
+# 3. Check your benefit status
+/credit-card-benefits:status
+
+# 4. Set up reminders for expiring credits
+/credit-card-benefits:remind
+```
+
+## Data Sources
+
+The plugin supports multiple ways to track your transactions:
+
+| Source | Best For | Setup |
+|--------|----------|-------|
+| **YNAB MCP** | YNAB users with MCP server | Auto-detected |
+| **YNAB API** | YNAB users | Requires API token |
+| **CSV Import** | Any card | Download from card website |
+| **Manual** | Simple tracking | No external data |
+
 ## Commands
 
-### `/credit-card-benefits:status [card] [--expiring] [--unused]`
+### `/credit-card-benefits:configure`
+**Start here!** Interactive setup for cards and data sources.
+
+```bash
+/credit-card-benefits:configure
+```
+
+### `/credit-card-benefits:sync [--full] [--since DATE]`
+Sync transactions from your configured data source.
+
+```bash
+/credit-card-benefits:sync           # Incremental (since last sync)
+/credit-card-benefits:sync --full    # Full 12-month resync
+```
+
+### `/credit-card-benefits:status [card] [--expiring]`
 Show status of all benefits and unused credits.
 
 ```bash
 /credit-card-benefits:status              # All cards
 /credit-card-benefits:status amex         # Just Amex Platinum
-/credit-card-benefits:status --expiring   # Benefits expiring within 30 days
+/credit-card-benefits:status --expiring   # Benefits expiring soon
 ```
 
-### `/credit-card-benefits:setup [card] [--open-date YYYY-MM-DD]`
-Initialize tracking or configure card open dates.
+### `/credit-card-benefits:import <file.csv> [--card name]`
+Import transactions from CSV files.
 
 ```bash
-/credit-card-benefits:setup                           # Interactive setup
-/credit-card-benefits:setup venture-x --open-date 2023-06-15
+/credit-card-benefits:import ~/Downloads/amex-jan.csv --card amex-platinum
+/credit-card-benefits:import statement.csv --format chase
+```
+
+Supported formats: Amex, Chase, Capital One, YNAB export, generic CSV
+
+### `/credit-card-benefits:remind [days]`
+Show benefits expiring soon that need attention.
+
+```bash
+/credit-card-benefits:remind          # Next 30 days
+/credit-card-benefits:remind 7        # Next 7 days (urgent)
 ```
 
 ### `/credit-card-benefits:use <card> <benefit> [amount]`
-Record using a benefit.
+Manually record using a benefit.
 
 ```bash
-/credit-card-benefits:use amex lululemon              # Full credit used
+/credit-card-benefits:use amex lululemon
 /credit-card-benefits:use amex resy 75 --notes "Carbone dinner"
-/credit-card-benefits:use chase travel 150
 ```
 
 ### `/credit-card-benefits:info <card>`
@@ -54,23 +105,6 @@ Show detailed benefit information for a card.
 /credit-card-benefits:info chase
 ```
 
-### `/credit-card-benefits:remind [days]`
-Show benefits expiring soon that need attention.
-
-```bash
-/credit-card-benefits:remind          # Next 30 days
-/credit-card-benefits:remind 7        # Next 7 days
-```
-
-### `/credit-card-benefits:ynab [analyze|credits|match]`
-Analyze YNAB transactions to find and match credit card credits.
-
-```bash
-/credit-card-benefits:ynab setup      # Configure YNAB integration
-/credit-card-benefits:ynab analyze    # Analyze transactions
-/credit-card-benefits:ynab credits    # Find statement credits
-```
-
 ## Agent
 
 The `benefits-tracker` agent can be invoked naturally:
@@ -79,50 +113,65 @@ The `benefits-tracker` agent can be invoked naturally:
 - "Show me my unused Chase Sapphire benefits"
 - "What benefits are expiring this month?"
 - "I just used my Lululemon credit"
+- "Import my latest Amex statement"
 
 ## Data Storage
 
-Your tracking data is stored at:
 ```
-~/.config/credit-card-benefits/checklist.json
+~/.config/credit-card-benefits/
+├── checklist.yaml      # Main tracking data (YAML for easy editing)
+└── ynab-token          # YNAB API token (if using YNAB API)
 ```
+
+## How Anniversary Detection Works
+
+The plugin uses **annual fee posting date** as the most reliable anniversary indicator:
+
+1. During initial sync, it looks back 12 months for annual fee transactions
+2. Patterns detected: "ANNUAL FEE", "ANNUAL MEMBERSHIP FEE", etc.
+3. The posting date becomes your `lastAnnualFeeDate`
+4. `nextAnnualFeeDate` is calculated automatically
+
+This is more reliable than card open date because:
+- Anniversary benefits reset when the fee posts, not when you applied
+- Fee posting dates can shift slightly year to year
+- The plugin tracks `annualFeeHistory` for reference
 
 ## Key Features
 
 ### Reset Type Awareness
 
-The plugin understands different reset types:
-
-- **Calendar Year**: Resets January 1 (most Amex/Chase credits)
-- **Account Anniversary**: Resets on your card open date (Venture X, Alaska)
-- **Monthly**: Must be used each month (Uber Cash, Entertainment)
-- **Quarterly**: Four periods per year (Resy, Lululemon)
-- **Semi-annual**: Two periods (Hotels, Saks)
+| Type | When It Resets | Examples |
+|------|----------------|----------|
+| Calendar Year | January 1 | Amex Resy, Lululemon, Airline |
+| Anniversary | Annual fee date | Venture X Travel, Alaska Passes |
+| Monthly | 1st of month | Uber Cash, Entertainment |
+| Quarterly | Q1-Q4 boundaries | Amex Resy, Lululemon |
+| Semi-annual | Jan 1 / Jul 1 | Amex Hotel, Saks, Chase Edit |
 
 ### 2026 Special Features
 
-- **Chase Select Hotels Credit**: One-time $250 credit for IHG, Montage, Pendry, Omni, Virgin, Minor, Pan Pacific hotels
-- **Credit Stacking**: Combine up to $800 on one Chase hotel stay (Edit + Select + Travel)
+- **Chase Select Hotels Credit**: One-time $250 for IHG, Montage, Pendry, Omni, Virgin, Minor, Pan Pacific
+- **Credit Stacking**: Combine up to $800 on one Chase hotel stay
 - **Venture X Lounge Changes**: Guest fees starting Feb 2026
 
-### YNAB Integration
+### Incremental Sync
 
-Connect to YNAB to:
-- Automatically detect transactions matching benefit patterns
-- Find statement credits and match to benefits
-- Identify unused monthly credits
-- Verify credits were received
+After initial setup:
+- Sync only fetches transactions since `lastSyncDate`
+- Faster and more efficient
+- Run `/credit-card-benefits:sync` weekly or monthly
 
 ## Quick Reference: Benefits by Reset Period
 
-### Monthly (Use Every Month)
+### Monthly (Use Every Month!)
 - Amex: Uber Cash ($15), Entertainment ($25), Equinox ($25)
 - Delta: Resy ($20), Rideshare ($10)
 
-### Quarterly (4x/year)
+### Quarterly
 - Amex: Resy ($100), Lululemon ($75)
 
-### Semi-Annual (2x/year)
+### Semi-Annual
 - Amex: Hotel ($300), Saks ($50)
 - Chase: The Edit ($250), Exclusive Tables ($150)
 
