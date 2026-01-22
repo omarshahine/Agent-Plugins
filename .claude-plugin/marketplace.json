@@ -24,6 +24,14 @@
       "version": "1.0.0",
       "keywords": ["rename", "files", "documents", "pdf", "organize", "naming", "patterns"],
       "category": "productivity"
+    },
+    {
+      "name": "apple-pim",
+      "source": "./plugins/apple-pim",
+      "description": "Native macOS integration for Calendar, Reminders, and Contacts using EventKit and Contacts frameworks",
+      "version": "1.0.0",
+      "keywords": ["calendar", "reminders", "contacts", "eventkit", "macos", "pim", "scheduling"],
+      "category": "productivity"
     }
   ]
 }
