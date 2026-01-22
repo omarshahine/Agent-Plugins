@@ -2,21 +2,60 @@
 # ================================
 # Track your premium credit card benefits and statement credits.
 #
-# Instructions:
-# 1. Update accountOpenDate for each card you have
-# 2. Delete cards you don't have
-# 3. Mark benefits as used when you spend them
-# 4. Check monthly for expiring credits!
+# Getting Started:
+# 1. Run /credit-card-benefits:configure to set up data sources
+# 2. The setup will auto-detect anniversaries from your transaction history
+# 3. Use /credit-card-benefits:sync to keep data current
 #
 # Reset Types:
 # - calendar-year: Resets January 1
-# - anniversary: Resets on your account open date
+# - anniversary: Resets on your card's annual fee date
 # - monthly: Must use each month or lose it
 # - quarterly: Q1 (Jan-Mar), Q2 (Apr-Jun), Q3 (Jul-Sep), Q4 (Oct-Dec)
 # - semi-annual: H1 (Jan-Jun), H2 (Jul-Dec)
 
 version: "1.0.0"
 lastUpdated: 2026-01-01
+
+# =============================================================================
+# CONFIGURATION
+# =============================================================================
+# Run /credit-card-benefits:configure to set this up interactively
+config:
+  setupComplete: false
+  setupDate: null
+
+  # Data source for transaction tracking
+  # Options: ynab-mcp, ynab-api, csv, manual
+  dataSource:
+    primary: null           # Set during configure
+
+    # YNAB settings (if using ynab-mcp or ynab-api)
+    ynab:
+      method: null          # mcp or api
+      budgetId: null
+      # Token stored separately at ~/.config/credit-card-benefits/ynab-token
+      accountMapping:
+        amex-platinum: null
+        capital-one-venture-x: null
+        chase-sapphire-reserve: null
+        alaska-atmos-summit: null
+        delta-reserve: null
+
+    # CSV settings (if using csv)
+    csv:
+      importDirectory: ~/Downloads
+
+  # Sync tracking
+  sync:
+    initialSyncDate: null   # When 12-month lookback was performed
+    lastSyncDate: null      # Last incremental sync
+    autoSync: false         # Future: sync on session start
+
+  # Which cards are active for this user
+  cards:
+    enabled: []             # e.g., [amex-platinum, chase-sapphire-reserve]
+    disabled: []            # Cards in template but user doesn't have
 
 # =============================================================================
 # AMERICAN EXPRESS PLATINUM
@@ -564,26 +603,8 @@ delta-reserve:
       nextEligible: null
 
 # =============================================================================
-# YNAB INTEGRATION (Optional)
+# END OF CHECKLIST
 # =============================================================================
-# To set up YNAB integration:
-# 1. Get your API token from https://app.ynab.com/settings/developer
-# 2. Run: /credit-card-benefits:ynab setup
-#    This will securely store your token at ~/.config/credit-card-benefits/ynab-token
-#    (This file is NOT tracked in git)
-# 3. The setup will list your YNAB accounts and help you map them below
-#
-ynab:
-  enabled: false
-  budgetId: last-used         # Or specific budget ID from YNAB
-  lastSync: null
-
-  # Map your YNAB credit card accounts to the cards above
-  # Run /credit-card-benefits:ynab setup to get your account IDs
-  # Format: card-key: "ynab-account-uuid"
-  accountMapping:
-    amex-platinum: null
-    capital-one-venture-x: null
-    chase-sapphire-reserve: null
-    alaska-atmos-summit: null
-    delta-reserve: null
+# Run /credit-card-benefits:status to see your current benefit usage
+# Run /credit-card-benefits:sync to update from your data source
+# Run /credit-card-benefits:remind to see expiring benefits
