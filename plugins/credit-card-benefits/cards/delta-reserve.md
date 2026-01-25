@@ -11,7 +11,7 @@
 |--------|--------|-----------|-------|-------|
 | **Resy Credit** | $240 | Monthly ($20) | 1st of month | Eligible US Resy restaurant purchases. Enrollment required |
 | **Rideshare Credit** | $120 | Monthly ($10) | 1st of month | Select rideshare providers. Enrollment required |
-| **Uber One Credit** | ~$120 | Monthly ($9.99) | 1st of month | Must enroll by June 25, 2026. Auto-renewing membership |
+| **Uber One Credit** | ~$120 | Monthly ($9.99) | 1st of month | ⚠️ **LIMITED-TIME PROMO** - Must enroll by June 25, 2026! Not a standing benefit. |
 
 ### Annual Credits
 
@@ -32,8 +32,9 @@
 
 | Level | Visits | How to Unlock |
 |-------|--------|---------------|
-| **Standard** | 15 visits per Medallion Year | Included with card |
+| **Standard** | 15 visits per Medallion Year (resets Feb 1) | Included with card |
 | **Unlimited** | Unlimited | Spend $75,000+ on card in calendar year |
+| **Guest Passes** | 4 per calendar year | Included with card |
 
 - Access when flying Delta (same-day boarding pass required)
 - Complimentary access to Centurion Lounges when flying Delta
@@ -61,17 +62,17 @@
 - **20% back** on Delta in-flight purchases (statement credit)
 - No foreign transaction fees
 
-## Total Annual Credit Value: ~$680+
+## Total Annual Credit Value: ~$560+ (standing benefits)
 
-| Credit | Value |
-|--------|-------|
-| Resy Credit | $240 |
-| Rideshare Credit | $120 |
-| Uber One Credit | $120 |
-| Delta Stays Credit | $200 |
-| **Total** | $680 |
+| Credit | Value | Notes |
+|--------|-------|-------|
+| Resy Credit | $240 | Standing benefit |
+| Rideshare Credit | $120 | Standing benefit |
+| Delta Stays Credit | $200 | Standing benefit |
+| **Standing Total** | **$560** | |
+| Uber One Credit | ~$120 | ⚠️ *Promotional - not included in standing total* |
 
-Plus: Companion Certificate value (varies), Sky Club access (~$500+ value), MQD Headstart toward status
+Plus: Companion Certificate value (varies), Sky Club access + 4 guest passes, MQD Headstart toward status
 
 ## Sources
 

@@ -213,6 +213,7 @@ amex-platinum:
       used: 0
       selectedAirline: null  # TODO: Set your airline (e.g., "Delta", "United")
       transactions: []
+      notes: "Must select airline by Jan 31 each year"
 
     # -------------------------------------------------------------------------
     # SAKS FIFTH AVENUE - $100/year ($50 semi-annual)
@@ -274,6 +275,19 @@ amex-platinum:
       intervalYears: 4
       lastUsed: null
       nextEligible: null
+      notes: "$120 Global Entry OR up to $85 TSA PreCheck (either/or, not both)"
+
+    # -------------------------------------------------------------------------
+    # OURA RING - $200/year
+    # New for 2026! Calendar year reset.
+    # -------------------------------------------------------------------------
+    oura-ring:
+      name: Oura Ring Credit
+      amount: 200
+      period: annual
+      resetDate: "01-01"
+      used: 0
+      transactions: []
 
 # =============================================================================
 # CAPITAL ONE VENTURE X
@@ -366,25 +380,27 @@ chase-sapphire-reserve:
       transactions: []
 
     # -------------------------------------------------------------------------
-    # THE EDIT HOTEL CREDIT - $500/year ($250 semi-annual)
+    # THE EDIT HOTEL CREDIT - $500/year ($250 x 2 per calendar year)
     # Book prepaid through Chase Travel. 2-night minimum.
-    # 2026: Can use anytime (more flexibility)
+    # 2026: Can use both anytime during calendar year (flexible timing)
     # -------------------------------------------------------------------------
     the-edit-h1:
-      name: The Edit Hotel Credit (H1)
+      name: The Edit Hotel Credit (1 of 2)
       amount: 250
       period: semi-annual
       resetDate: "01-01"
       used: 0
       transactions: []
+      notes: "Two $250 credits per calendar year. Can use both anytime in 2026 (not tied to H1/H2)."
 
     the-edit-h2:
-      name: The Edit Hotel Credit (H2)
+      name: The Edit Hotel Credit (2 of 2)
       amount: 250
       period: semi-annual
       resetDate: "07-01"
       used: 0
       transactions: []
+      notes: "Two $250 credits per calendar year. Can use both anytime in 2026 (not tied to H1/H2)."
 
     # -------------------------------------------------------------------------
     # EXCLUSIVE TABLES DINING - $300/year ($150 semi-annual)
@@ -410,8 +426,9 @@ chase-sapphire-reserve:
     # IHG, Montage, Pendry, Omni, Virgin, Minor, Pan Pacific
     # Book prepaid via Chase Travel. 2-night minimum.
     # WARNING: No points earned on this booking!
+    # NOTE: Does NOT continue into 2027!
     #
-    # STACKING TIP: Combine with The Edit + Travel Credit for up to $800 off!
+    # STACKING TIP: Some properties MAY qualify for both credits; stacking possible but not guaranteed
     # -------------------------------------------------------------------------
     select-hotels-2026:
       name: 2026 Select Hotels Credit (One-Time)
@@ -421,7 +438,7 @@ chase-sapphire-reserve:
       validTo: "2026-12-31"
       used: 0
       transactions: []
-      notes: Can stack with The Edit for up to $800 on one booking!
+      notes: "2026 ONLY - does NOT continue into 2027. Some properties MAY qualify for stacking with The Edit (up to $800), but not guaranteed."
 
     # -------------------------------------------------------------------------
     # PELOTON CREDIT - $120/year ($10/month)
@@ -444,6 +461,47 @@ chase-sapphire-reserve:
       monthlyAmount: 10
       period: monthly
       monthsUsed: []
+
+    # -------------------------------------------------------------------------
+    # DOORDASH RESTAURANT CREDIT - $60/year ($5/month)
+    # -------------------------------------------------------------------------
+    doordash-restaurant:
+      name: DoorDash Restaurant Credit
+      amount: 60
+      monthlyAmount: 5
+      period: monthly
+      monthsUsed: []
+
+    # -------------------------------------------------------------------------
+    # DOORDASH NON-RESTAURANT CREDIT - $240/year ($10 x 2/month)
+    # $10 credit applies twice per month
+    # -------------------------------------------------------------------------
+    doordash-non-restaurant:
+      name: DoorDash Non-Restaurant Credit
+      amount: 240
+      monthlyAmount: 20
+      period: monthly
+      monthsUsed: []
+      notes: "$10 credit applies twice per month"
+
+    # -------------------------------------------------------------------------
+    # STUBHUB/VIAGOGO CREDIT - $300/year ($150 semi-annual)
+    # -------------------------------------------------------------------------
+    stubhub-viagogo-h1:
+      name: StubHub/viagogo Credit (H1)
+      amount: 150
+      period: semi-annual
+      resetDate: "01-01"
+      used: 0
+      transactions: []
+
+    stubhub-viagogo-h2:
+      name: StubHub/viagogo Credit (H2)
+      amount: 150
+      period: semi-annual
+      resetDate: "07-01"
+      used: 0
+      transactions: []
 
     # -------------------------------------------------------------------------
     # APPLE STREAMING CREDITS - One-Time Enrollment
@@ -469,6 +527,7 @@ chase-sapphire-reserve:
       intervalYears: 4
       lastUsed: null
       nextEligible: null
+      notes: "Covers $120 Global Entry, NEXUS, or up to $85 TSA PreCheck"
 
     # -------------------------------------------------------------------------
     # $75,000 ANNUAL SPEND BENEFITS
@@ -515,21 +574,57 @@ alaska-atmos-summit:
 
   benefits:
     # -------------------------------------------------------------------------
-    # LOUNGE PASSES - 8 per year
+    # LOUNGE PASSES - 8 per year (2 per quarter, use-it-or-lose-it)
     # Valid entire travel day. Each pass includes 2 children.
+    # IMPORTANT: Quarterly issuance - passes do NOT roll over!
     # -------------------------------------------------------------------------
     lounge-passes:
       name: Alaska Lounge Passes
-      amount: 8
-      estimatedValue: 500
-      period: annual
-      resetDate: anniversary
-      passesRemaining: 8
-      usageLog: []
+      passesPerQuarter: 2
+      period: quarterly
+      estimatedQuarterlyValue: 130
+      quarters:
+        q1:
+          remaining: 2
+          usageLog: []
+        q2:
+          remaining: 2
+          usageLog: []
+        q3:
+          remaining: 2
+          usageLog: []
+        q4:
+          remaining: 2
+          usageLog: []
+      notes: "2 passes per quarter, use-it-or-lose-it. Value is subjective (~$130/quarter)."
       # Example usage log entry:
       # - date: 2026-03-15
       #   airport: SEA
       #   guests: 1
+
+    # -------------------------------------------------------------------------
+    # WI-FI PASSES - 8 per year
+    # Resets on account anniversary
+    # -------------------------------------------------------------------------
+    wifi-passes:
+      name: Wi-Fi Passes
+      amount: 8
+      period: annual
+      resetDate: anniversary
+      passesRemaining: 8
+      usageLog: []
+
+    # -------------------------------------------------------------------------
+    # GLOBAL COMPANION AWARD - 25,000 points
+    # Resets on account anniversary
+    # -------------------------------------------------------------------------
+    global-companion-award:
+      name: Global Companion Award
+      amount: 25000
+      period: annual
+      resetDate: anniversary
+      used: false
+      notes: "25,000 points toward a companion fare"
 
     # -------------------------------------------------------------------------
     # ANNIVERSARY STATUS POINTS - 10,000 points
@@ -611,16 +706,19 @@ delta-reserve:
 
     # -------------------------------------------------------------------------
     # UBER ONE CREDIT - ~$120/year ($9.99/month)
-    # Must enroll by June 25, 2026!
+    # LIMITED-TIME PROMOTIONAL BENEFIT - Must enroll by June 25, 2026!
+    # Do NOT include in standing benefit value calculations
     # -------------------------------------------------------------------------
     uber-one:
       name: Uber One Credit
       amount: 120
       monthlyAmount: 9.99
       period: monthly
-      validUntil: "2026-06-25"
+      promotional: true
+      enrollmentDeadline: "2026-06-25"
       enrolled: false  # TODO: Enroll before June 25, 2026!
       monthsUsed: []
+      notes: "LIMITED-TIME PROMO. Must enroll by June 25, 2026!"
 
     # -------------------------------------------------------------------------
     # DELTA STAYS CREDIT - $200/year
@@ -648,7 +746,7 @@ delta-reserve:
 
     # -------------------------------------------------------------------------
     # DELTA SKY CLUB ACCESS
-    # 15 visits per Medallion Year
+    # 15 visits per Medallion Year (resets Feb 1)
     # Unlimited after $75K calendar year spend
     # -------------------------------------------------------------------------
     sky-club-visits:
@@ -659,10 +757,21 @@ delta-reserve:
       usageLog: []
       unlimitedThreshold: 75000
       currentYearSpend: 0
+      notes: "Resets Feb 1 (Medallion Year). Unlimited at $75K calendar year spend."
       # Example usage log entry:
       # - date: 2026-01-15
       #   airport: ATL
       #   guests: 1
+
+    # -------------------------------------------------------------------------
+    # SKY CLUB GUEST PASSES - 4 per year
+    # -------------------------------------------------------------------------
+    sky-club-guest-passes:
+      name: Sky Club Guest Passes
+      amount: 4
+      period: calendar-year
+      passesRemaining: 4
+      usageLog: []
 
     # -------------------------------------------------------------------------
     # MQD HEADSTART - $2,500

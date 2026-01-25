@@ -8,15 +8,31 @@ description: |
 
 Expert knowledge for maximizing premium credit card benefits across American Express Platinum, Capital One Venture X, Chase Sapphire Reserve, Bank of America Alaska Airlines Atmos, and Delta SkyMiles Reserve cards.
 
+## Key Deadlines (2026)
+
+| Date | Deadline | Card |
+|------|----------|------|
+| Jan 31 | Select airline for $200 fee credit | Amex Platinum |
+| Feb 1 | Capital One lounge guest fees begin | Venture X |
+| Feb 1 | Medallion Year resets (Sky Club visits) | Delta Reserve |
+| Mar 31 | Q1 credits expire (Resy, Lululemon) | Amex Platinum |
+| Jun 25 | **Uber One enrollment deadline (PROMO)** | Delta Reserve |
+| Jun 30 | H1 credits expire | Multiple cards |
+| Sep 30 | Q3 credits expire (Resy, Lululemon) | Amex Platinum |
+| Dec 31 | Calendar year credits expire | Multiple cards |
+| Dec 31 | 2026 Select Hotels credit expires (does NOT continue to 2027) | CSR |
+
 ## Quick Reference: Total Annual Credit Values
 
 | Card | Annual Fee | Total Credits | Net Value |
 |------|------------|---------------|-----------|
-| Amex Platinum | $895 | ~$3,500+ | +$2,600+ |
+| Amex Platinum | $895 | ~$3,700+ | +$2,800+ |
 | Capital One Venture X | $395 | ~$400 | +$5 |
-| Chase Sapphire Reserve | $795 | ~$1,350+ | +$555+ |
+| Chase Sapphire Reserve | $795 | ~$1,950+ | +$1,155+ |
 | Alaska Atmos Summit | $395 | ~$700+ | +$305+ |
-| Delta Reserve | $650 | ~$680+ | +$30+ |
+| Delta Reserve | $650 | ~$560+ | +varies |
+
+*Note: Delta Reserve Uber One is promotional (not standing benefit). Alaska lounge pass values are subjective.*
 
 ## Reset Type Reference
 
@@ -27,13 +43,16 @@ Most credits that reset on a fixed date regardless of when you opened the card.
 - Hotel Credit ($300 x 2 semi-annual)
 - Resy ($100 x 4 quarterly)
 - Lululemon ($75 x 4 quarterly)
-- Airline Fee ($200 annual)
+- Airline Fee ($200 annual - must select airline by Jan 31)
 - Saks ($50 x 2 semi-annual)
+- Oura Ring ($200 annual) - NEW for 2026
 
 **Chase Sapphire Reserve:**
-- The Edit Hotel ($250 x 2, flexible in 2026)
+- The Edit Hotel ($250 x 2, flexible timing in 2026)
 - Exclusive Tables ($150 x 2)
-- Select Hotels 2026 ($250 one-time)
+- Select Hotels 2026 ($250 one-time - does NOT continue to 2027)
+- StubHub/viagogo ($150 x 2 semi-annual)
+- DoorDash Restaurant ($5/mo) + Non-Restaurant ($20/mo)
 
 ### Account Anniversary
 Resets on your card open date each year.
@@ -60,23 +79,34 @@ Must be used each month or forfeited.
 - Uber One ($9.99/mo)
 - Equinox ($25/mo)
 
+**Chase Sapphire Reserve:**
+- Peloton ($10/mo)
+- Lyft ($10/mo)
+- DoorDash Restaurant ($5/mo)
+- DoorDash Non-Restaurant ($10 x 2/mo = $20/mo)
+
 **Delta Reserve:**
 - Resy ($20/mo)
 - Rideshare ($10/mo)
-- Uber One ($9.99/mo)
+- Uber One ($9.99/mo) ⚠️ *PROMO - must enroll by June 25, 2026*
 
 ## Strategic Stacking Opportunities
 
 ### Chase 2026 Hotel Credit Stack
-In 2026 only, you can combine up to $800 in credits on one hotel stay:
+In 2026 only, you MAY be able to combine credits on one hotel stay:
 1. $250 from The Edit credit
 2. $250 from Select Hotels credit (IHG, Montage, Pendry, Omni, Virgin, Minor, Pan Pacific)
 3. $300 from annual travel credit
+
+**Potential total: Up to $800** (stacking is possible but not guaranteed)
 
 **Requirements:**
 - Book prepaid through Chase Travel
 - 2-night minimum
 - Hotel must be in both The Edit AND one of the select chains
+- Some properties MAY qualify for both credits; verify eligibility before booking
+
+**Note:** The 2026 Select Hotels credit does NOT continue into 2027.
 
 ### Amex Platinum Maximum Value Month
 December is the best month for Amex Platinum:
@@ -89,13 +119,13 @@ December is the best month for Amex Platinum:
 
 Some benefits require active enrollment:
 
+**Amex Platinum:**
+- Select your airline for the $200 fee credit (must select by Jan 31)
+
 **Delta Reserve:**
 - Resy Credit - enroll in Amex account
 - Rideshare Credit - enroll in Amex account
-- Uber One Credit - must enroll by June 25, 2026
-
-**Amex Platinum:**
-- Select your airline for the $200 fee credit (usually done once per year)
+- Uber One Credit - ⚠️ **LIMITED-TIME PROMO** - must enroll by June 25, 2026! (Not a standing benefit)
 
 ## Lounge Access Quick Guide
 
@@ -106,8 +136,8 @@ Some benefits require active enrollment:
 
 ### Limited Visits
 - **Amex Platinum:** 10 Delta Sky Club visits (when flying Delta)
-- **Delta Reserve:** 15 Sky Club visits per Medallion Year (unlimited at $75K spend)
-- **Alaska Summit:** 8 Alaska Lounge passes per year
+- **Delta Reserve:** 15 Sky Club visits per Medallion Year (resets Feb 1; unlimited at $75K spend) + 4 guest passes/year
+- **Alaska Summit:** 8 Alaska Lounge passes per year (2/quarter, use-it-or-lose-it; ~$130/quarter subjective value)
 
 ### 2026 Lounge Changes
 **Capital One Venture X (Feb 1, 2026):**

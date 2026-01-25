@@ -15,7 +15,8 @@
 | **Lululemon Credit** | $300 | Quarterly ($75 each) | Jan 1, Apr 1, Jul 1, Oct 1 | US stores or lululemon.com (excludes outlets) |
 | **Uber Cash** | $200 | Monthly ($15 + $20 Dec) | 1st of month | $15/month + $20 bonus in December |
 | **Uber One Credit** | $120 | Monthly ($9.99) | Monthly | Auto-renewing Uber One membership |
-| **Airline Fee Credit** | $200 | Annual | Jan 1 | Incidental fees at one selected qualifying airline |
+| **Airline Fee Credit** | $200 | Annual | Jan 1 | Incidental fees at one selected qualifying airline. **Must select by Jan 31** |
+| **Oura Ring Credit** | $200 | Annual | Jan 1 | NEW for 2026! Credit for Oura Ring purchases |
 | **Saks Fifth Avenue** | $100 | Semi-annual ($50 each) | Jan 1, Jul 1 | Saks Fifth Avenue purchases |
 | **Equinox Credit** | $300 | Monthly ($25) | Monthly | Gym and Equinox+ app memberships |
 | **Walmart+ Credit** | ~$155 | Monthly ($12.95) | 1st of month | Walmart+ membership. Enrollment required in Amex account. |
@@ -23,9 +24,9 @@
 
 ### Multi-Year Credits
 
-| Credit | Amount | Frequency | Reset |
-|--------|--------|-----------|-------|
-| **Global Entry/TSA PreCheck** | $120 (GE) / $85 (TSA) | Every 4-4.5 years | Application date |
+| Credit | Amount | Frequency | Reset | Notes |
+|--------|--------|-----------|-------|-------|
+| **Global Entry/TSA PreCheck** | $120 (GE) OR $85 (TSA) | Every 4-4.5 years | Application date | Either/or, not both |
 
 ## Lounge Access
 

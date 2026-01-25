@@ -13,7 +13,9 @@ There are two consumer cards: **Ascent** (mid-tier) and **Summit** (premium). Th
 
 | Benefit | Value | Frequency | Reset | Notes |
 |---------|-------|-----------|-------|-------|
-| **Alaska Lounge Passes** | 8 passes (~$500+ value) | Annual | Account anniversary | Valid for entire travel day, includes 2 children per pass. Can access multiple lounges same day |
+| **Alaska Lounge Passes** | 8 passes (2/quarter) | Quarterly | Each quarter | **Use-it-or-lose-it** - 2 passes per quarter, do NOT roll over. ~$130/quarter subjective value. Includes 2 children per pass. |
+| **Wi-Fi Passes** | 8 passes | Annual | Account anniversary | Free Wi-Fi passes for Alaska flights |
+| **Global Companion Award** | 25,000 points | Annual | Account anniversary | Points toward a companion fare |
 | **Status Points** | 10,000 | Annual | Account anniversary | Starting with first anniversary |
 | **Free Checked Bag** | ~$35-70/trip | Per flight | N/A | For cardholder + up to 6 guests on same reservation (when paid with card) |
 | **Priority Boarding** | N/A | Per flight | N/A | For cardholder + up to 6 guests on same reservation |

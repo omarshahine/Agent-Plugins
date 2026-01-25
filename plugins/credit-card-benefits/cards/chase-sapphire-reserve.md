@@ -11,24 +11,26 @@
 |--------|--------|-----------|-------|-------|
 | **Annual Travel Credit** | $300 | Annual | Account anniversary | Extremely flexible - covers any travel purchase (flights, hotels, Uber, parking, tolls, buses, etc.) |
 
-### Semi-Annual Credits (Calendar Year)
+### The Edit & Exclusive Tables Credits (Calendar Year)
 
 | Credit | Amount | Frequency | Reset | Notes |
 |--------|--------|-----------|-------|-------|
-| **The Edit Hotel Credit** | $500 | Semi-annual ($250 each) | Jan 1, Jul 1 (flexible in 2026) | Prepaid bookings via Chase Travel at The Edit hotels. 2-night minimum. **2026 Change**: Can use both $250 credits anytime during year |
+| **The Edit Hotel Credit** | $500 | $250 x 2 per calendar year | Calendar year (flexible timing) | Prepaid bookings via Chase Travel at The Edit hotels. 2-night minimum. **2026**: Both $250 credits can be used anytime during the year (not tied to H1/H2). |
 | **Exclusive Tables Dining** | $300 | Semi-annual ($150 each) | Jan 1, Jul 1 | Restaurants in the Sapphire Reserve Exclusive Tables program. Book via OpenTable. |
 
 ### 2026 Special Credit (One-Time Benefit)
 
 | Credit | Amount | Availability | Notes |
 |--------|--------|--------------|-------|
-| **Select Hotels Credit** | $250 | Jan 1 - Dec 31, 2026 only | Prepaid bookings via Chase Travel at: IHG, Montage, Pendry, Omni, Virgin Hotels, Minor Hotels, Pan Pacific. 2-night minimum. Does NOT earn points. |
+| **Select Hotels Credit** | $250 | Jan 1 - Dec 31, 2026 only | Prepaid bookings via Chase Travel at: IHG, Montage, Pendry, Omni, Virgin Hotels, Minor Hotels, Pan Pacific. 2-night minimum. Does NOT earn points. **Does NOT continue into 2027.** |
 
-**Credit Stacking Tip**: In 2026, you can potentially combine:
+**Credit Stacking Opportunity**: In 2026, you MAY be able to combine:
 - $250 from The Edit credit
 - $250 from Select Hotels credit
 - $300 from annual travel credit
-= **Up to $800** on one well-planned hotel stay
+= **Potential up to $800** on one hotel stay
+
+*Note: Some properties MAY qualify for both credits; stacking is possible but not guaranteed. Verify eligibility before booking.*
 
 ### Monthly Credits
 
@@ -36,6 +38,14 @@
 |--------|--------|-----------|-------|-------|
 | **Peloton Credit** | $120/year | Monthly ($10) | 1st of month | Applies to Peloton membership or gear. Valid through Dec 31, 2027. |
 | **Lyft Credit** | $120/year | Monthly ($10) | 1st of month | Credit toward Lyft rides. |
+| **DoorDash Restaurant Credit** | $60/year | Monthly ($5) | 1st of month | Credit toward restaurant orders |
+| **DoorDash Non-Restaurant Credit** | $240/year | Monthly ($10 x 2) | Twice per month | $10 credit applies twice per month for non-restaurant orders |
+
+### Semi-Annual Credits
+
+| Credit | Amount | Frequency | Reset | Notes |
+|--------|--------|-----------|-------|-------|
+| **StubHub/viagogo Credit** | $300/year | Semi-annual ($150 each) | Jan 1, Jul 1 | Credit toward event tickets |
 
 ### One-Time Enrollment Credits
 
