@@ -29,7 +29,7 @@ if [[ "$1" == "--dry-run" ]]; then
 fi
 
 # Base paths
-PLUGIN_CACHE="$HOME/.claude/plugins/cache/omarshahine-agent-plugins"
+PLUGIN_CACHE="$HOME/.claude/plugins/cache/my-plugins"
 COS_DATA="$PLUGIN_CACHE/chief-of-staff/data"
 BACKUP_DIR="$HOME/Desktop/inbox-plugins-backup-$(date +%Y%m%d-%H%M%S)"
 
@@ -45,7 +45,7 @@ echo ""
 # Check if chief-of-staff is installed
 if [[ ! -d "$COS_DATA" ]]; then
     echo -e "${RED}Error: Chief-of-Staff plugin not found at $COS_DATA${NC}"
-    echo "Please install it first: /plugin install chief-of-staff@omarshahine-agent-plugins"
+    echo "Please install it first: /plugin install chief-of-staff@my-plugins"
     exit 1
 fi
 
@@ -184,10 +184,10 @@ if [[ "$DRY_RUN" == false ]]; then
     echo "  1. Review merged settings in $COS_DATA/settings.yaml"
     echo "  2. Test with: /chief-of-staff:status"
     echo "  3. If everything works, uninstall old plugins:"
-    echo "     /plugin uninstall inbox-triage@omarshahine-agent-plugins"
-    echo "     /plugin uninstall inbox-to-parcel@omarshahine-agent-plugins"
-    echo "     /plugin uninstall inbox-to-reminder@omarshahine-agent-plugins"
-    echo "     /plugin uninstall newsletter-unsubscriber@omarshahine-agent-plugins"
+    echo "     /plugin uninstall inbox-triage@my-plugins"
+    echo "     /plugin uninstall inbox-to-parcel@my-plugins"
+    echo "     /plugin uninstall inbox-to-reminder@my-plugins"
+    echo "     /plugin uninstall newsletter-unsubscriber@my-plugins"
 else
     echo -e "${YELLOW}DRY RUN complete. Run without --dry-run to perform migration.${NC}"
 fi

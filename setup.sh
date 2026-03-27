@@ -1,13 +1,13 @@
 #!/bin/bash
-# Agent-Plugins Setup Script
+# Chief-of-Staff Template Setup Script
 # Run this after cloning to build MCP servers bundled with plugins
 
 set -e
 
 REPO_DIR="$(cd "$(dirname "$0")" && pwd)"
 
-echo "Agent-Plugins Setup"
-echo "==================="
+echo "Chief-of-Staff Template Setup"
+echo "=============================="
 echo ""
 
 # Build MCP servers bundled with plugins

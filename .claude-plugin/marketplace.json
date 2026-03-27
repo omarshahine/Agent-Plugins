@@ -1,11 +1,11 @@
 {
-  "name": "omarshahine-agent-plugins",
+  "name": "my-plugins",
   "owner": {
-    "name": "Omar Shahine"
+    "name": "Your Name"
   },
   "metadata": {
-    "description": "Public plugin marketplace for Claude Code - email management, travel, file organization, and personal productivity",
-    "version": "2.0.2",
+    "description": "Template for building Claude Code personal assistant plugins - email management, travel, file organization, and productivity",
+    "version": "3.0.0",
     "pluginRoot": "./plugins"
   },
   "plugins": [

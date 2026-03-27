@@ -15,7 +15,7 @@ Track and maximize your premium credit card benefits with anniversary-aware chec
 ## Installation
 
 ```bash
-/plugin install credit-card-benefits@omarshahine-agent-plugins
+/plugin install credit-card-benefits@my-plugins
 ```
 
 ## Quick Start
