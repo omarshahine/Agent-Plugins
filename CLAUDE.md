@@ -433,7 +433,7 @@ These must never be committed to tracked files:
 - **Physical addresses**: Real street addresses - use `123 Main St` placeholders
 - **Phone numbers**: US phone patterns (XXX-XXX-XXXX) - use `555-123-4567`
 - **API keys/secrets**: Hardcoded `api_key=`, `token=`, `secret=`, `Bearer [value]` - use `${VAR}` env vars
-- **Service-specific forwarding addresses**: `username@library.readwise.io` style personal identifiers
+- **Service-specific forwarding addresses**: `user@service.example.com` style personal identifiers
 - **User data files**: YAML/JSON in `plugins/*/data/` must be gitignored (only `*.example.*` and `.gitignore` tracked)
 
 ### Marketplace & Path Patterns (Non-blocking)
