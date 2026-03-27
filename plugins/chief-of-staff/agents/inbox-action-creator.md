@@ -40,7 +40,7 @@ Glob: ~/.claude/plugins/cache/*/chief-of-staff/*/references/inbox-action-pattern
 
 If not found in cache, try the source repo:
 ```
-Glob: ~/GitHub/Agent-Plugins/plugins/chief-of-staff/references/inbox-action-pattern.md
+Glob: ~/GitHub/chief-of-staff-template/plugins/chief-of-staff/references/inbox-action-pattern.md
 ```
 
 This contains all templates and patterns you need. Use it as your source of truth for file formats.

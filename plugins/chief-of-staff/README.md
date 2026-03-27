@@ -5,7 +5,7 @@ The "one plugin to rule them all" for personal productivity. Chief-of-Staff is a
 ## Installation
 
 ```bash
-/plugin install chief-of-staff@omarshahine-agent-plugins
+/plugin install chief-of-staff@my-plugins
 ```
 
 ## Quick Start
@@ -121,7 +121,7 @@ All data is stored in `data/` (gitignored, with `.example.yaml` templates):
 
 **Optional (enhance functionality):**
 - Parcel API MCP - Package tracking
-- Apple PIM MCP v2.4.0+ - Reminders and calendar with profile support (`/plugin install apple-pim@omarshahine-agent-plugins`)
+- Apple PIM MCP v2.4.0+ - Reminders and calendar with profile support (`/plugin install apple-pim@my-plugins`)
 - Playwright plugin - Newsletter unsubscribe web forms
 
 ## Apple PIM Profile Integration

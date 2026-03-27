@@ -1,12 +1,12 @@
-# Agent-Plugins Development Guide
+# Chief-of-Staff Template Development Guide
 
-This repository is a Claude Code plugin marketplace (`omarshahine-agent-plugins`) containing reusable plugins for email management, travel, file organization, and personal information management.
+This repository is a Claude Code plugin template containing reusable plugins for email management, travel, file organization, and personal information management.
 
 ## Quick Commands
 
 ```bash
 # Install a plugin from this marketplace
-/plugin install chief-of-staff@omarshahine-agent-plugins
+/plugin install chief-of-staff@my-plugins
 
 # Check MCP server status
 /mcp
@@ -15,13 +15,13 @@ This repository is a Claude Code plugin marketplace (`omarshahine-agent-plugins`
 # Task(subagent_type="chief-of-staff:inbox-interviewer", prompt="Triage my inbox")
 
 # Clear plugin cache (after changes)
-rm -rf ~/.claude/plugins/cache/omarshahine-agent-plugins/<plugin>
+rm -rf ~/.claude/plugins/cache/my-plugins/<plugin>
 ```
 
 ## Repository Structure
 
 ```
-Agent-Plugins/
+chief-of-staff-template/
 ├── .claude-plugin/
 │   └── marketplace.json       # Marketplace definition (plugins registry)
 ├── plugins/
@@ -230,10 +230,10 @@ Plugins in this repo are automatically available when the marketplace is added:
 
 ```bash
 # Add marketplace (one time)
-/plugin marketplace add omarshahine/Agent-Plugins
+/plugin marketplace add omarshahine/chief-of-staff-template
 
 # Install plugin (first time only - plugins auto-update when configured)
-/plugin install chief-of-staff@omarshahine-agent-plugins
+/plugin install chief-of-staff@my-plugins
 ```
 
 **Note:** Plugins auto-update when `autoUpdates: true` is set in plugin settings. Manual reinstall is only needed if auto-updates are disabled or to force an immediate update.
@@ -405,7 +405,7 @@ This plugin is sourced from an external GitHub repository rather than being bund
 
 **Usage:** Install via this marketplace - the plugin is listed here but code lives in the external repo:
 ```bash
-/plugin install apple-pim@omarshahine-agent-plugins
+/plugin install apple-pim@my-plugins
 ```
 
 See the [Apple-PIM-Agent-Plugin repo](https://github.com/omarshahine/Apple-PIM-Agent-Plugin) for full documentation.
@@ -433,7 +433,7 @@ These must never be committed to tracked files:
 - **Physical addresses**: Real street addresses - use `123 Main St` placeholders
 - **Phone numbers**: US phone patterns (XXX-XXX-XXXX) - use `555-123-4567`
 - **API keys/secrets**: Hardcoded `api_key=`, `token=`, `secret=`, `Bearer [value]` - use `${VAR}` env vars
-- **Service-specific forwarding addresses**: `username@library.readwise.io` style personal identifiers
+- **Service-specific forwarding addresses**: `user@service.example.com` style personal identifiers
 - **User data files**: YAML/JSON in `plugins/*/data/` must be gitignored (only `*.example.*` and `.gitignore` tracked)
 
 ### Marketplace & Path Patterns (Non-blocking)
@@ -456,8 +456,8 @@ These files/patterns are excluded from all checks:
 ### Plugin not loading
 1. Check `plugin.json` syntax
 2. Verify plugin is in `marketplace.json`
-3. Clear cache: `rm -rf ~/.claude/plugins/cache/omarshahine-agent-plugins/<plugin>`
-4. Reinstall: `/plugin install <plugin>@omarshahine-agent-plugins`
+3. Clear cache: `rm -rf ~/.claude/plugins/cache/my-plugins/<plugin>`
+4. Reinstall: `/plugin install <plugin>@my-plugins`
 
 ### Commands not showing in autocomplete
 - Remove any `name:` field from command frontmatter
