@@ -57,3 +57,6 @@ plugins/*/mcp-server/*/node_modules/
 # Private PII patterns (not tracked in public repo)
 .pii-patterns.local.yaml
 notes.md
+
+# Clawpatch local review state
+.clawpatch/
